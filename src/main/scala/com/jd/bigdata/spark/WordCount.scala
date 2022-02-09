@@ -3,6 +3,9 @@ package com.jd.bigdata.spark
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
+/**
+ * 集成App
+ */
 object WordCount {
 
   def main(args: Array[String]): Unit = {
