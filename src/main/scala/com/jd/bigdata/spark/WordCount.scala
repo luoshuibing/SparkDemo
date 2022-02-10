@@ -13,7 +13,8 @@ object WordCount {
 
     val sc: SparkContext = new SparkContext(config)
 
-    val lines: RDD[String] = sc.textFile("input")
+    //val lines: RDD[String] = sc.textFile("input")
+    val lines: RDD[String] = sc.textFile("file:///myhome/module/spark/input")
 
     val words: RDD[String] = lines.flatMap(_.split(" "))
 
