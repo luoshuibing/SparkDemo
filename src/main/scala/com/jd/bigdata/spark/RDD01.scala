@@ -14,14 +14,16 @@ object RDD01 {
     val listRdd: RDD[Int] = sc.makeRDD(List(1, 2, 3, 4))
 
     listRdd.collect().foreach(println)
-
+    //内核数与2进行比较
     val arrayRdd: RDD[Int] = sc.parallelize(Array(1, 2, 3, 4))
 
     arrayRdd.collect().foreach(println)
-
+    //读取文件时，传递的分区参数为最小分区数，但是不一定是这个分区数，取决于hadoop读取文件时分片规则
     val lines: RDD[String] = sc.textFile("input")
 
     lines.collect().foreach(println)
+
+    arrayRdd.saveAsTextFile("output")
 
 
 
